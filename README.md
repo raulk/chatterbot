@@ -12,19 +12,20 @@ Once all prompts have been used, the bot enters a recycling mode: prompts repeat
 
 ## Setup
 
-1. Click the **Use this template** button above (or [here](https://github.com/raulk/chatterbot/generate)) to create your own repository.
-2. Install [Bun](https://bun.sh) if you want to run the bot locally.
-3. Create a Mattermost incoming webhook and note the URL.
-4. Add repository secrets in GitHub:
+**GitHub Actions (recommended):** click the **Use this template** button above (or [here](https://github.com/raulk/chatterbot/generate)) to create your own repository, then:
+
+1. Create a Mattermost incoming webhook and note the URL.
+2. Add repository secrets in GitHub:
    - `MATTERMOST_WEBHOOK_URL` (required)
    - `MATTERMOST_CHANNEL_ID` (optional, overrides the webhook's default channel)
-5. Edit `prompts.yaml` to add your own prompts.
-6. The cron workflow handles the rest.
+3. Edit `prompts.yaml` to add your own prompts.
+4. The cron workflow handles the rest.
 
-For local testing, copy `.env.example` to `.env` and fill in the webhook URL:
+**Locally:** install [Bun](https://bun.sh), then:
 
 ```sh
 cp .env.example .env
+# edit .env with your webhook URL
 bun install
 bun run post
 ```
