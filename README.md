@@ -39,10 +39,10 @@ cp .env.example .env
 
 ```sh
 # Post today's prompt to the webhook's default channel
-just post
+bun run post
 
 # Post to a specific channel
-just post --channel town-square
+bun run post --channel town-square
 ```
 
 ## Adding prompts
@@ -66,5 +66,4 @@ Mattermost markdown and shortcode emojis (`:rocket:`, `:fire:`) are supported in
 
 ## Prerequisites
 
-- [Bun](https://bun.sh) (runtime)
-- [just](https://github.com/casey/just) (task runner, optional)
+- [Bun](https://bun.sh)
