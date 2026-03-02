@@ -10,41 +10,23 @@ A GitHub Actions cron job runs at 9 AM UTC, Monday through Friday. The bot count
 
 Once all prompts have been used, the bot enters a recycling mode: prompts repeat from the beginning and a recycling notice is prepended. Appending new prompts to the list extends the sequential runway without disrupting past assignments.
 
-## Dependencies
-
-This bot deliberately minimizes third-party dependencies to reduce exposure to supply chain attacks. The full runtime dependency set:
-
-| Package | Purpose |
-|---------|---------|
-| `yaml` | Parse the prompts YAML file |
-
-Everything else (HTTP, CLI arg parsing, date arithmetic) uses Bun/Node built-ins.
-
 ## Setup
 
-1. Fork this repository.
-2. Create a Mattermost incoming webhook and note the URL.
-3. Add repository secrets in GitHub:
+1. Click "Use this template" to create your own repository.
+2. Install [Bun](https://bun.sh) if you want to run the bot locally.
+3. Create a Mattermost incoming webhook and note the URL.
+4. Add repository secrets in GitHub:
    - `MATTERMOST_WEBHOOK_URL` (required)
    - `MATTERMOST_CHANNEL_ID` (optional, overrides the webhook's default channel)
-4. Edit `prompts.yaml` to add your own prompts.
-5. The cron workflow handles the rest.
+5. Edit `prompts.yaml` to add your own prompts.
+6. The cron workflow handles the rest.
 
 For local testing, copy `.env.example` to `.env` and fill in the webhook URL:
 
 ```sh
 cp .env.example .env
-# edit .env with your webhook URL
-```
-
-## Usage
-
-```sh
-# Post today's prompt to the webhook's default channel
+bun install
 bun run post
-
-# Post to a specific channel
-bun run post --channel town-square
 ```
 
 ## Adding prompts
@@ -66,6 +48,14 @@ prompts:
 
 Mattermost markdown and shortcode emojis (`:rocket:`, `:fire:`) are supported in both the template and individual prompts.
 
-## Prerequisites
+## Manual firing
 
-- [Bun](https://bun.sh)
+Trigger a post outside the schedule from the Actions tab, or locally:
+
+```sh
+# Post to the webhook's default channel
+bun run post
+
+# Post to a specific channel
+bun run post --channel town-square
+```
