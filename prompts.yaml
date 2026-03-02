@@ -1,0 +1,21 @@
+# Chatterbot prompts
+# Mattermost markdown supported. Emojis via shortcodes (:rocket:) or Unicode.
+# Append-only: new prompts go at the end of the list.
+
+# {{prompt}} is replaced with the selected prompt text.
+# {{date}} is replaced with the current date (YYYY-MM-DD).
+template: |-
+  **Daily chatter thread ({{date}})** :thread:
+  _"{{prompt}}"_
+
+prompts:
+  - "Tabs vs spaces. This will not be settled today. :keyboard:"
+  - "What's the best piece of advice you've received as an engineer?"
+  - "What's a tool or workflow change that made a real difference for you?"
+  - "What's the most interesting bug you've ever debugged?"
+  - "What's something you learned recently that surprised you?"
+  - "What's a hill you're willing to die on, engineering-wise?"
+  - "Monorepo or polyrepo? State your case."
+  - "What's the oldest line of code still running in production that you know of?"
+  - "What's an abstraction that paid off, and one that didn't?"
+  - "What do you wish you'd known in your first year as an engineer?"
