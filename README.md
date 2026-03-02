@@ -12,7 +12,7 @@ Once all prompts have been used, the bot enters a recycling mode: prompts repeat
 
 ## Setup
 
-1. Click "Use this template" to create your own repository.
+1. Click the **Use this template** button above (or [here](https://github.com/raulk/chatterbot/generate)) to create your own repository.
 2. Install [Bun](https://bun.sh) if you want to run the bot locally.
 3. Create a Mattermost incoming webhook and note the URL.
 4. Add repository secrets in GitHub:
