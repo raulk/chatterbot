@@ -21,15 +21,6 @@ Once all prompts have been used, the bot enters a recycling mode: prompts repeat
 3. Edit `prompts.yaml` to add your own prompts.
 4. The cron workflow handles the rest.
 
-**Locally:** install [Bun](https://bun.sh), then:
-
-```sh
-cp .env.example .env
-# edit .env with your webhook URL
-bun install
-bun run post
-```
-
 ## Adding prompts
 
 Edit `prompts.yaml`. The file has two fields:
@@ -49,14 +40,20 @@ prompts:
 
 Mattermost markdown and shortcode emojis (`:rocket:`, `:fire:`) are supported in both the template and individual prompts.
 
-## Manual firing
+## Testing
 
-Trigger a post outside the schedule from the Actions tab, or locally:
+Install [Bun](https://bun.sh), then:
 
 ```sh
+cp .env.example .env
+# edit .env with your webhook URL
+bun install
+
 # Post to the webhook's default channel
 bun run post
 
 # Post to a specific channel
 bun run post --channel town-square
 ```
+
+You can also trigger a one-off post from the Actions tab using workflow dispatch.
