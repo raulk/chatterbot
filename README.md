@@ -1,5 +1,7 @@
 # Chatterbot
 
+[![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github)](https://github.com/raulk/chatterbot/generate)
+
 Posts a fun, markdown-formatted discussion prompt to a Mattermost channel every workday morning via incoming webhook. Prompts are curated in a YAML file so the daily topic is a surprise.
 
 ## How it works
